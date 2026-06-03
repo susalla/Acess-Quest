@@ -8,65 +8,59 @@
 </head>
 <body>
 
-   <!-- Tela de Início: Hub de Missão Elegante -->
-        <section id="tela-inicio" class="painel-missao">
-            
-            <div class="painel-header">
-                <span class="badge-status">Operação WCAG 2.1</span>
-                <h1>Access Quest</h1>
-                <p class="subtitulo-painel">Simulador de Auditoria de Acessibilidade Digital</p>
+    <section id="tela-inicio" class="card painel-missao">
+        
+        <div class="painel-header">
+            <span class="badge-status">Operação WCAG 2.1</span>
+            <h1>Access Quest</h1>
+            <p class="subtitulo-painel">Simulador de Auditoria de Acessibilidade Digital</p>
+        </div>
+        
+        <div class="painel-conteudo">
+            <div class="contexto-narrativo">
+                <p>O e-commerce da <strong>Store a Loja</strong> foi ao ar com graves barreiras de acessibilidade no código. Clientes com deficiência estão impedidos de comprar. Sua missão como especialista é rastrear e neutralizar as <strong>8 falhas críticas</strong> camufladas na interface.</p>
             </div>
-            
-            <div class="painel-conteudo">
-                <div class="contexto-narrativo">
-                    <p>O e-commerce da <strong>Store a Loja</strong> foi ao ar com graves barreiras de acessibilidade no código. Clientes com deficiência estão impedidos de comprar. Sua missão como especialista é rastrear e neutralizar as <strong>8 falhas críticas</strong> camufladas na interface.</p>
-                </div>
 
-                <!-- O Hub das Diretrizes (Sem dar spoilers das respostas) -->
-                <div class="hub-diretrizes">
-                    <h2>Manual de Reconhecimento (Princípios POUR)</h2>
-                    <p class="instrucao-diretriz">Para decifrar os bugs, sua análise deve se basear nos 4 pilares mundiais do W3C:</p>
+            <div class="hub-diretrizes">
+                <h2>Manual de Reconhecimento (Princípios POUR)</h2>
+                <p class="instrucao-diretriz">Para decifrar os bugs, sua análise deve se basear nos 4 pilares mundiais do W3C:</p>
+                
+                <div class="grid-diretrizes">
+                    <div class="card-diretriz pilar-perceptivel">
+                        <div class="card-icon">👁️</div>
+                        <h3>Perceptibilidade</h3>
+                        <p>A informação não pode ser invisível. Atente-se a contrastes severos de cores e elementos visuais que deveriam ter uma alternativa em texto.</p>
+                    </div>
                     
-                    <div class="grid-diretrizes">
-                        <!-- Card 1: Perceptibilidade -->
-                        <div class="card-diretriz pilar-perceptivel">
-                            <div class="card-icon">👁️</div>
-                            <h3>Perceptibilidade</h3>
-                            <p>A informação não pode ser invisível. Atente-se a contrastes severos de cores e elementos visuais que deveriam ter uma alternativa em texto.</p>
-                        </div>
-                        
-                        <!-- Card 2: Operabilidade -->
-                        <div class="card-diretriz pilar-operavel">
-                            <div class="card-icon">⌨️</div>
-                            <h3>Operabilidade</h3>
-                            <p>A interface deve ser navegável por qualquer um. Teste a fluidez usando apenas o teclado (Tab/Enter). Cuidado com botões "falsos".</p>
-                        </div>
-                        
-                        <!-- Card 3: Compreensibilidade -->
-                        <div class="card-diretriz pilar-compreensivel">
-                            <div class="card-icon">🧠</div>
-                            <h3>Compreensibilidade</h3>
-                            <p>A ação deve ser clara e previsível. Links vagos ou comandos confusos que desorientam o usuário são falhas graves de design.</p>
-                        </div>
-                        
-                        <!-- Card 4: Robustez -->
-                        <div class="card-diretriz pilar-robusto">
-                            <div class="card-icon">💻</div>
-                            <h3>Robustez</h3>
-                            <p>O código deve suportar tecnologias assistivas. Elementos interativos complexos ou ícones solitários precisam de tags semânticas corretas.</p>
-                        </div>
+                    <div class="card-diretriz pilar-operavel">
+                        <div class="card-icon">⌨️</div>
+                        <h3>Operabilidade</h3>
+                        <p>A interface deve ser navegável por qualquer um. Teste a fluidez usando apenas o teclado (Tab/Enter). Cuidado com botões "falsos".</p>
+                    </div>
+                    
+                    <div class="card-diretriz pilar-compreensivel">
+                        <div class="card-icon">🧠</div>
+                        <h3>Compreensibilidade</h3>
+                        <p>A ação deve ser clara e previsível. Links vagos ou comandos confusos que desorientam o usuário são falhas graves de design.</p>
+                    </div>
+                    
+                    <div class="card-diretriz pilar-robusto">
+                        <div class="card-icon">💻</div>
+                        <h3>Robustez</h3>
+                        <p>O código deve suportar tecnologias assistivas. Elementos interativos complexos ou ícones solitários precisam de tags semânticas corretas.</p>
                     </div>
                 </div>
-
-                <div class="painel-footer">
-                    <p class="cronometro-aviso">⏱️ Cronômetro operacional: <strong>08:00 minutos</strong></p>
-                </div>
             </div>
 
-            <button id="btn-iniciar" class="btn-missao-iniciar" onclick="iniciarJogo()">
-                Iniciar Auditoria Prática
-            </button>
-        </section>
+            <div class="painel-footer">
+                <p class="cronometro-aviso">⏱️ Cronômetro operacional: <strong>08:00 minutos</strong></p>
+            </div>
+        </div>
+
+        <button id="btn-iniciar" class="btn-missao-iniciar">
+            Iniciar Auditoria Prática
+        </button>
+    </section>
 
     <section id="tela-jogo" class="tela oculta">
          
@@ -189,7 +183,7 @@
                 problema: "Campo sem Label",
                 impacto: "Leitores de tela não conseguem informar ao usuário qual dado deve ser preenchido.",
                 wcag: "3.3.2 – Labels or Instructions",
-                correcao: '<label for="no mi me">Seu nome:</label>\n<input id="nome" type="text">'
+                correcao: '<label for="nome">Seu nome:</label>\n<input id="nome" type="text">'
             },
             "4": {
                 problema: "Link Genérico",
@@ -223,29 +217,38 @@
             }
         };
 
+        // Variáveis de Controle
         let pontuacao = 0;
         let bugsEncontrados = 0;
-        const totalBugs = 8; // Atualizado para 8
-        let tempoRestante = 480; // Ajustado para 8 minutos (480 segundos)
+        const totalBugs = 8;
+        let tempoRestante = 480; // 8 minutos
         let timerInterval;
+        let ultimoElementoFocado;
 
-        const telaInicial = document.getElementById('tela-inicial');
+        // Elementos do DOM limpos e declarados apenas UMA vez
+        const telaInicial = document.getElementById('tela-inicio');
         const telaJogo = document.getElementById('tela-jogo');
         const telaConclusao = document.getElementById('tela-conclusao');
         const modalFeedback = document.getElementById('modal-feedback');
         const areaDesafio = document.getElementById('area-desafio');
-        let ultimoElementoFocado;
 
+        // Botão de Iniciar Jogo
         document.getElementById('btn-iniciar').addEventListener('click', () => {
-            telaInicial.classList.replace('ativa', 'oculta');
-            telaJogo.classList.replace('oculta', 'ativa');
+            telaInicial.classList.remove('ativa');
+            telaInicial.classList.add('oculta');
+            
+            telaJogo.classList.remove('oculta');
+            telaJogo.classList.add('ativa');
             
             const tituloJogo = document.getElementById('titulo-jogo');
-            tituloJogo.focus();
+            if (tituloJogo) {
+                tituloJogo.focus();
+            }
             
             iniciarTemporizador();
         });
 
+        // Clique na área do desafio (achando os bugs)
         areaDesafio.addEventListener('click', (evento) => {
             const elementoClicado = evento.target;
             if (elementoClicado.classList.contains('bug')) {
@@ -259,16 +262,13 @@
         function tratarAcerto(bugId, elementoHtml) {
             ultimoElementoFocado = elementoHtml;
             
-            // NOVO: Seleciona TODOS os elementos na tela que compartilham este mesmo bugId
             const elementosIguais = document.querySelectorAll(`[data-bug-id="${bugId}"]`);
             
-            // Aplica a correção visual (borda verde) e remove a classe 'bug' de TODOS eles
             elementosIguais.forEach(elemento => {
                 elemento.classList.remove('bug');
                 elemento.style.outline = "3px solid #5cb85c";
             });
             
-            // A pontuação e contagem sobem apenas UMA vez, independentemente de quantos itens iguais existam
             pontuacao += 10;
             bugsEncontrados++;
             atualizarPainel();
@@ -299,6 +299,7 @@
             document.getElementById('barra-progresso').style.width = `${(bugsEncontrados / totalBugs) * 100}%`;
         }
 
+        // Fechar Modal
         document.getElementById('btn-continuar').addEventListener('click', () => {
             modalFeedback.close();
             if (ultimoElementoFocado) {
@@ -306,6 +307,7 @@
             }
         });
 
+        // Cronômetro
         function iniciarTemporizador() {
             timerInterval = setInterval(() => {
                 tempoRestante--;
@@ -320,12 +322,17 @@
             }, 1000);
         }
 
+        // Fim de Jogo
         function finalizarJogo(tempoEsgotado = false) {
             clearInterval(timerInterval);
             modalFeedback.close();
             
-            telaJogo.classList.replace('ativa', 'oculta');
-            telaConclusao.classList.replace('oculta', 'ativa');
+            // Usando remove/add que é mais seguro que replace
+            telaJogo.classList.remove('ativa');
+            telaJogo.classList.add('oculta');
+            
+            telaConclusao.classList.remove('oculta');
+            telaConclusao.classList.add('ativa');
             
             document.getElementById('pontuacao-final').innerText = pontuacao;
             document.getElementById('bugs-finais').innerText = bugsEncontrados;
